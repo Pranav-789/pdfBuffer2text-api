@@ -5,7 +5,7 @@ const app = express();
 const PORT = 3000;
 
 // Raw body parser for application/pdf
-app.use('/convert', express.raw({ type: 'application/pdf'}));
+app.use('/convert', express.raw({ type: 'application/pdf', limit: "10mb"}));
 
 app.post('/convert', async (req, res) => {
   try {
